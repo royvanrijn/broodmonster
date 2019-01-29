@@ -1,0 +1,138 @@
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+
+	<style type="text/css">
+     .main > canvas {     
+    width: 300px;
+    height: 300px;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;    }
+
+    p {
+    	font-family: 'Concert One', cursive;
+    	font-size: 55;
+    	color: d6561b;
+    	text-align: center;
+    }
+    </style>
+</head>
+ <body>
+
+<div class="main">
+	<p>Jouw #broodmonster</p>
+   <canvas id="monster_face" width="300" height="300"></canvas>
+	<p>Coming soon...</p>
+</div>
+
+	<script>
+
+var EYE_COLORS = ['#9bf462', '#6bdba3', '#6cb9c9', '#b984ce', '#b4c162', '#a599bf', '#89c9e5', '#99e8c7'];
+var BREAD_COLORS = ['#c0d1a3', '#f7c2a3', '#dbe2a1', '#a8e0dc', '#b6bad8', '#c4aabf', '#d1a69c', '#d4add6'];
+var SIZE = 300;
+// Unique broodmonster: encode this into DNA!
+var breadsliceRotation = parseInt(Math.random() * 16); //breadsliceRotation: 0...16
+var breadsliceColor = parseInt(Math.random() * 8); //breadsliceColor: 0...8
+var eyebrowAngle = parseInt(Math.random() * 16); //eyebrowAngle: 0...16
+var eyebrowHeight = parseInt(Math.random() * 16); //eyebrowHeight: 0...16
+var eyeColor = parseInt(Math.random() * 8); //eyeColor: 0...8
+var eyeHeight = parseInt(Math.random() * 16); //eyeHeight: 0...16
+var eyeSeperation = parseInt(Math.random() * 8); //eyeSeperation: 0...8
+var mouthHeight = parseInt(Math.random() * 16); //mouthHeight: 0...16
+var mouthWidth = parseInt(Math.random() * 16); //mouthWidth: 0...16
+var mouthOpen = parseInt(Math.random() * 16); //mouthOpen: 0...16
+
+var canvas = document.getElementById('monster_face');
+if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+  // Rotate everything for breadslice
+  ctx.translate(SIZE/2, SIZE/2);
+  ctx.rotate((Math.PI / 180)* 2 * (breadsliceRotation - 8));
+  ctx.translate(-SIZE/2, -SIZE/2);
+
+  // Draw outline/breadslice 300x300:
+  let slice = new Path2D('m55.5,138.5l-3.5,114.5l190,1l-10,-113c31.333333,-3.333333 34.666667,-1.666667 32,-46c-6,-102 -110,-64 -116,-45c-5,-21 -108.5,-55.5 -113.5,28.5c-3,40 -13,62 21,60z');
+
+  ctx.fillStyle = BREAD_COLORS[breadsliceColor];
+  ctx.fill(slice);
+
+  ctx.strokeStyle = "#684823";
+  ctx.lineWidth = 9;
+  ctx.stroke(slice);
+
+  // Rotate back
+//  ctx.translate(SIZE/2, SIZE/2);
+  //ctx.rotate((Math.PI / 180)*(8 - breadsliceRotation));
+ // ctx.translate(-SIZE/2, -SIZE/2);
+
+  // Draw eyes:
+
+  //Left
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(112 - eyeSeperation, eyeHeight + 121, 35, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = EYE_COLORS[eyeColor];
+  ctx.beginPath();
+  ctx.arc(116  - eyeSeperation, eyeHeight + 122, 12, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = 'black';
+  ctx.beginPath();
+  ctx.arc(116 - eyeSeperation, eyeHeight + 122, 4, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(112 - eyeSeperation, eyeHeight + 118, 2, 0, Math.PI * 2, true);
+  ctx.fill();
+  //Right
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(185 + eyeSeperation, eyeHeight + 120, 35, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = EYE_COLORS[eyeColor];
+  ctx.beginPath();
+  ctx.arc(182 + eyeSeperation, eyeHeight + 122, 12, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = 'black';
+  ctx.beginPath();
+  ctx.arc(182 + eyeSeperation, eyeHeight + 122, 4, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(178 + eyeSeperation, eyeHeight + 118, 2, 0, Math.PI * 2, true);
+  ctx.fill();
+
+   //Eyebrow angle
+   ctx.beginPath();
+   ctx.moveTo(90, 65 + eyebrowHeight + eyeHeight);
+   ctx.lineTo(140, 55 + eyebrowAngle + eyebrowHeight + eyeHeight);
+   ctx.closePath();
+   ctx.stroke();
+
+   ctx.beginPath();
+   ctx.moveTo(160, 55 + eyebrowAngle + eyebrowHeight + eyeHeight);
+   ctx.lineTo(210, 65 + eyebrowHeight + eyeHeight);
+   ctx.closePath();
+   ctx.stroke();
+
+   // Mouth:
+   ctx.fillStyle = 'black';
+   ctx.beginPath();
+   ctx.moveTo(90 + mouthWidth, 180 + mouthHeight);
+   ctx.bezierCurveTo(110 + mouthWidth, 200 + mouthHeight + (mouthOpen*2), 180 - mouthWidth, 200 + mouthHeight + (mouthOpen*2), 200 - mouthWidth, 180 + mouthHeight);
+   ctx.bezierCurveTo(180 - mouthWidth, 182 + mouthHeight, 110 + mouthWidth, 182 + mouthHeight, 90 + mouthWidth, 180 + mouthHeight);
+   ctx.closePath();
+   ctx.fill();
+
+}
+
+	</script>
+
+ </body>
+</html>
