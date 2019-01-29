@@ -35,6 +35,12 @@
 var EYE_COLORS = ['#9bf462', '#6bdba3', '#6cb9c9', '#b984ce', '#b4c162', '#a599bf', '#89c9e5', '#99e8c7'];
 var BREAD_COLORS = ['#c0d1a3', '#f7c2a3', '#dbe2a1', '#a8e0dc', '#b6bad8', '#c4aabf', '#d1a69c', '#d4add6'];
 var SIZE = 300;
+
+setInterval(updateFace, 400);
+updateFace();
+
+function updateFace() {
+
 // Unique broodmonster: encode this into DNA!
 var breadsliceRotation = parseInt(Math.random() * 16); //breadsliceRotation: 0...16
 var breadsliceColor = parseInt(Math.random() * 8); //breadsliceColor: 0...8
@@ -50,6 +56,8 @@ var mouthOpen = parseInt(Math.random() * 16); //mouthOpen: 0...16
 var canvas = document.getElementById('monster_face');
 if (canvas.getContext) {
     var ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Rotate everything for breadslice
   ctx.translate(SIZE/2, SIZE/2);
@@ -129,6 +137,13 @@ if (canvas.getContext) {
    ctx.bezierCurveTo(180 - mouthWidth, 182 + mouthHeight, 110 + mouthWidth, 182 + mouthHeight, 90 + mouthWidth, 180 + mouthHeight);
    ctx.closePath();
    ctx.fill();
+
+  // Rotate back:
+  ctx.translate(SIZE/2, SIZE/2);
+  ctx.rotate((Math.PI / 180)* 2 * -(breadsliceRotation - 8));
+  ctx.translate(-SIZE/2, -SIZE/2);
+
+}
 
 }
 
