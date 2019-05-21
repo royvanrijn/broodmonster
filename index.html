@@ -1,8 +1,14 @@
 <html>
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+  <!-- Recept van: https://receptidee.nl/recipe/herman-het-vriendschapsbrood/  -->
 
+	<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<style type="text/css">
+  body {
+    background-color: #FEF9E7;
+    font-family: 'Concert One', cursive;
+  }
      .main > canvas {     
     width: 300px;
     height: 300px;
@@ -12,25 +18,225 @@
     right: 0;
   display: block;
   margin-left: auto;
-  margin-right: auto;    }
+  margin-right: auto;
+  }
 
-    p {
-    	font-family: 'Concert One', cursive;
+  a {
+  color: #922B21;
+}
+
+  .broodmonster {
+      color: #922B21;
+    }
+
+    h1 {
     	font-size: 55;
-    	color: d6561b;
+    	color: #5D6D7E;
     	text-align: center;
     }
+    h2 {
+      font-size: 35;
+      color: #34495E;
+      text-align: center;
+    }
+    p {
+      font-size: 20;
+      color: #34495E;
+      text-align: center;
+    }
+
+    #myBtn {
+  display: none; 
+  position: fixed;
+  top: 20px; 
+  right: 40px;
+  z-index: 99;
+  border: none; 
+  outline: none; 
+  background-color: #E59866; 
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#myBtn:hover {
+  background-color: #AEB6BF;
+}
     </style>
 </head>
- <body>
-
+<body>
+<button onclick="topFunction()" id="myBtn" title="naar boven"><i class="fas fa-arrow-up"></i></button>
 <div class="main">
-	<p>Jouw #broodmonster</p>
-   <canvas id="monster_face" width="300" height="300"></canvas>
-	<p>Coming soon...</p>
-</div>
+<h1>#<span class="broodmonster">broodmonster</span></h1>
+<h2>Gefeliciteerd!</h2>
+<p>
+    Je hebt een baby <span class="broodmonster">broodmonster</span> gekregen!<br />
+    <br />
+    Verzorg je nieuwe vriend goed en hij de komende <span class="broodmonster">10</span> dagen flink groeien.<br />
+    <br />
+    Over <span class="broodmonster">negen</span> dagen is jouw monster uitgegroeid en zal hij <span class="broodmonster">drie</span> babies krijgen.<br />
+    Deze geef jij <span class="broodmonster">kado</span> aan je beste vrienden en vriendinnen!<br /><br />
+    De <span class="broodmonster">tiende</span> dag evolueert jouw <span class="broodmonster">monster</span> is een verrukkelijk feestbrood!
+</p>
+<canvas id="monster_face" width="300" height="300"></canvas>
 
-	<script>
+<h2>Instructies:</h2>
+<h2>Dag 1</h2>
+<p>
+    Geef jouw <span class="broodmonster">broodmonster</span> eerst een toepasselijke naam!<br />
+    <br />
+    Laat hem los in zijn nieuwe verblijf: <u><b>een ruime kom</b></u><br />
+    <br />
+    Vandaag heeft hij rust nodig, bewaar hem op een plek uit de zon.<br />
+    <br />
+    Als dekentje gebruikt jouw monster een theedoek, over zijn kom.<br />
+</p>
+
+<h2>Dag 2</h2>
+<p>
+    <span class="broodmonster">Broodmonster</span> is moe en slaapt veel, maar vandaag mag er even mee gespeeld worden.<br />
+    <br />
+    Roer hem vandaag een paar keer om.<br />
+    <br />
+    (Dit kan het beste met een houten of plastic lepel)<br />
+</p>
+
+<h2>Dag 3</h2>
+<p>
+    Je <span class="broodmonster">broodmonster</span> begint honger te krijgen... roer hem vandaag nog <span class="broodmonster">2x</span>!<br />
+    <br />
+    Zorg je dat je morgen genoeg eten hebt voor jouw monster?<br />
+</p>
+
+<h2>Dag 4 (voederdag)</h2>
+<p>
+    <span class="broodmonster">Broodmonster</span> heeft vandaag enorme <span class="broodmonster"><b>HONGER</b></span>!!!<br /><br />
+    Voer hem:<br />
+    <br />
+    <span class="broodmonster">200</span> gram suiker<br />
+    <span class="broodmonster">125</span> gram bloem<br />
+    <span class="broodmonster">250</span> ml melk<br />
+    <br />
+    Roer je <span class="broodmonster">monster</span> goed rond, daarna mag hij weer slapen...<br />
+    <br />
+    <span class="broodmonster">Tip:</span> Monsters groeien extra hard als je een liedje voor ze zingt!
+</p>
+
+<h2>Dag 5</h2>
+<p>
+    Vandaag mag er weer gespeeld worden... roer <span class="broodmonster">broodmonster</span> nog eens <span class="broodmonster">2x</span> om.<br />
+    <br />
+    Hij begint al flink te groeien!
+</p>
+
+<h2>Dag 6</h2>
+<p>
+    We zijn al ruim over de helft, weet jij al aan wie je de toekomstige baby monsters gaat uitdelen?<br />
+    <br />
+    Roer je <span class="broodmonster">monster</span> nog 3x om.
+</p>
+
+<h2>Dag 7</h2>
+<p>
+    <span class="broodmonster">Broodmonsters</span> bestaan al erg lang, misschien kennen je ouders of je opa en oma's ze ook wel?<br />
+    <br />
+    Bekende monsters van vroeger waren <span class="broodmonster">Herman het Brood</span> en <span class="broodmonster">Pleun</span>.<br />
+    <br />
+    Roer je <span class="broodmonster">monster</span> 2x om vandaag.
+</p>
+
+<h2>Dag 8</h2>
+<p>
+    De laatste rustdag, roer je <span class="broodmonster">monster</span> nog maar eens goed rond!<br />
+    <br />
+    Morgen is de grote dag...
+</p>
+
+<h2>Dag 9 (uitdeeldag)</h2>
+<p>
+    <span class="broodmonster">Broodmonster</span> heeft weer <span class="broodmonster"><b>HONGER</b></span>!<br />
+    <br />
+    Geef hem vandaag:<br />
+    <br />
+    <span class="broodmonster">150</span> gram suiker<br />
+    <span class="broodmonster">125</span> gram bloem<br />
+    <span class="broodmonster">250</span> ml melk<br />
+    <br />
+    Roer je <span class="broodmonster">monster</span> nog een laatste keer goed rond!<br />
+    <br />
+    Verdeel jouw monster nu in <span class="broodmonster">vier</span> gelijke stukken.<br />
+    <br />
+    Je moet nu <span class="broodmonster">drie</span> babies uitdelen (of stiekem zelf houden en opnieuw beginnen).<br />
+    Op school, bij familie of vrienden, geef er eentje aan de buurvrouw of aan de postbezorger.<br />
+    <br />
+    Geef ze daarbij de link naar deze website<br />
+    (<span class="broodmonster">https://www.broodmonster.nl</span>)<br />
+    zodat ze weten hoe ze voor hun baby broodmonsters moeten zorgen.<br />
+    <br />
+    Het <span class="broodmonster">laatste</span> deel bewaar je voor morgen, want ondertussen zal <span class="broodmonster">jij</span> ook wel flinke honger hebben gekregen...
+</p>
+
+<h2>Dag 10 (bakdag)</h2>
+<p>
+    <span class="broodmonster">Broodmonster</span> krijg voor de laatste keer eten en daarna moet hij de oven in.<br />
+    <br />
+    Verwarm de oven voor op <span class="broodmonster">150</span> graden.<br />
+    <br />
+    Voer jouw monster nu:<br />
+    <br />
+    <span class="broodmonster">15</span> ml olijfolie<br />
+    <span class="broodmonster">3</span> eieren<br />
+    <span class="broodmonster">250</span> gram bloem<br />
+    <span class="broodmonster">90</span> gram suiker<br />
+    <span class="broodmonster">2</span> eetlepels bakpoeder<br />
+    <br />
+    Optioneel, maar extra lekker:<br/>
+    <br />
+    <span class="broodmonster">2</span> theelepels kaneel<br />
+    <span class="broodmonster">200</span> gram gewelde rozijnen<br />
+    <span class="broodmonster">100</span> gram (gehakte) walnoten, hazelnoten en/of stukjes chocola<br />
+    <span class="broodmonster">2</span> appels in kleine blokjes (goed drogen)<br />
+    <br />
+    Roer dit voor een laatste keer door elkaar.<br />
+    <br />
+    Neem afscheid van jouw <span class="broodmonster">monster</span> en giet hem in een ingevette cakevorm of tulband.<br />
+    <br />
+    Na anderhalf uur broeden in de oven op <span class="broodmonster">150</span> graden is hij klaar.<br />
+</p>
+
+<h1>eet smakelijk!</h2>
+<p>
+    Het is erg leuk om te lezen hoe het gaat met alle <span class="broodmonster">broodmonster</span> babies.<br />
+    <br />
+    Deel daarom je foto's, filmpjes en ervaringen op social media, gebruik de hashtag #<span class="broodmonster">broodmonster</span>.<br />
+    <br />
+    Volg de <span class="broodmonster">broodmonsters</span> op:<br />
+    <br />
+    <a href="https://www.instagram.com/explore/tags/broodmonster">instagram</a> | 
+    <a href="https://twitter.com/hashtag/broodmonster">twitter</a> | 
+    <a href="https://www.facebook.com/hashtag/broodmonster">facebook</a><br />
+</p>
+<h1>Hopelijk tot een volgende keer!</h2>
+
+</div>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 var EYE_COLORS = ['#9bf462', '#6bdba3', '#6cb9c9', '#b984ce', '#b4c162', '#a599bf', '#89c9e5', '#99e8c7'];
 var BREAD_COLORS = ['#c0d1a3', '#f7c2a3', '#dbe2a1', '#a8e0dc', '#b6bad8', '#c4aabf', '#d1a69c', '#d4add6'];
@@ -144,10 +350,7 @@ if (canvas.getContext) {
   ctx.translate(-SIZE/2, -SIZE/2);
 
 }
-
 }
-
-	</script>
-
- </body>
+</script>
+</body>
 </html>
